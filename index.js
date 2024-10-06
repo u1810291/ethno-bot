@@ -10,7 +10,12 @@ app.post("*", async (req, res) => {
 });
 
 app.get("*", async (req, res) => {
-    res.send(await handler(req));
+    try{
+        res.send(await handler(req));
+    } catch(error){
+        console.log("xatolik", error)
+    }
+    
 });
 
 app.listen(PORT, function (err) {

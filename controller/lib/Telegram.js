@@ -1,14 +1,15 @@
+const {axiosInstance} = require("./axios")
 const { text } = require("express");
 
 function sendMessage(messageObj, messageText){
     return axiosInstance.get("sendMessage", {
-        chat_id: messageObj.chat.id,
+        chat_id: messageObj?.chat?.id,
         text: messageText,
     });
 }
 
 function handleMessage(messageObj){
-    const messageText = messageObj.text || "";
+    const messageText = messageObj?.text || "";
     if (messageText.charAt(0) === "/") {
         const command = messageText.substr(1);
         switch (command) {
