@@ -11,7 +11,7 @@ function handleMessage(messageObj){
     const messageText = messageObj.text || "";
     if (messageText.charAt(0) === "/") {
         const command = messageText.substr(1);
-        switch (command){
+        switch (command) {
             case "start":
                 //we want to send a welcome message to the user
                 return sendMessage(
