@@ -1,12 +1,12 @@
-function sendProduct(bot, chat){
+function sendProduct(bot, chat,){
     const sendproduct ={
         inline_keyboard: [
-          [{ text: 'Документ',  callback_data: 'direction' }],
-          [{ text: 'Одежда',    callback_data: 'direction' }],
-          [{ text: 'Техника',   callback_data: 'direction' }],
-          [{ text: 'Косметика', callback_data: 'direction' }],
-          [{ text: 'Питание',   callback_data: 'direction' }],
-          [{ text: 'Другое',    callback_data: 'direction' }],
+          [{ text: 'Документ',  callback_data: 'from' }],
+          [{ text: 'Одежда',    callback_data: 'from' }],
+          [{ text: 'Техника',   callback_data: 'from' }],
+          [{ text: 'Косметика', callback_data: 'from' }],
+          [{ text: 'Питание',   callback_data: 'from' }],
+          [{ text: 'Другое',    callback_data: 'from' }],
           [{ text: 'Назад',     callback_data: 'kirish' }]
         ]
       }

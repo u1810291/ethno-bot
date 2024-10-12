@@ -1,3 +1,4 @@
+const { direction } = require('./direction');
 const {sendProduct} = require('./sendProduct');
 
 function initializeView(bot) {
@@ -13,18 +14,31 @@ function initializeView(bot) {
     const data = callbackQuery.data;
     const chatId = message.chat.id;
     const firstName = message.chat.first_name;
-    console.log('sendProduct');
+    
 
     if (data === 'send_product') {
         sendProduct(bot, message.chat);
-        return;
+        
     }
+    
     if (data === 'dokument') {
-        bot.sendMessage(message.chat.id, 'dokument bosildi') 
+      direction(bot, message.chat, 'from') 
       }
    if (data === 'kirish') {
         main(bot, chatId, firstName) 
       }
+
+    if (data === 'from'){
+      direction(bot, message.chat, 'to')
+    }
+    if (data === 'to'){
+      direction(bot, message.chat, 'qalay')
+      //tarif
+    }
+    if (data === 'qalay'){
+      bot.sendMessage(message.chat.id, from  + '-'+ to)
+      //tarif
+    }
   });
 
 }
