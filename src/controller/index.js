@@ -1,4 +1,3 @@
-
 const express = require('express');
 const { initializeView } = require('../view');
 const { bot } = require('../config/bot.config');
@@ -14,6 +13,6 @@ router.post('*', (req, res) => {
   res.sendStatus(200);
 });
 
-initializeView()
+initializeView();
 
 module.exports = router;

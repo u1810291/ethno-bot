@@ -30,4 +30,14 @@ async function updateOrder(data) {
   return 0;
 }
 
-module.exports = { createOrder, findOrder, updateOrder }
+async function deleteOrder(data) {
+  try {
+    const order = await Order.deleteOne(data?.id);
+    return order;
+  } catch(err) {
+    console.log(err)
+  }
+  return 0;
+}
+
+module.exports = { createOrder, findOrder, updateOrder, deleteOrder }

@@ -1,3 +1,4 @@
+const { mainMenu } = require('./menu');
 const { direction } = require('./direction');
 const { bot } = require('../config/bot.config');
 const { commandsMatch } = require('./commands');
@@ -11,7 +12,7 @@ function initializeView() {
 
   bot.on('callback_query', (callbackQuery) => {
     const message = callbackQuery.message;
-    const data = isJSONParsable(callbackQuery.data) ? JSON.parse(callbackQuery.data) : callbackQuery.data;
+    const data = isJSONParsable(callbackQuery.data) ? JSON.parse(callbackQuery.data) : callbackQuery.data; // string = "Some text" || JSON = "{\"key\": \"value\"}"
     const chatId = message.chat.id;
     const firstName = message.chat.first_name;
     parcelDirection = {
@@ -19,7 +20,6 @@ function initializeView() {
       ...(pick(data, 'direction') === 'to' && ({ from: omit(data, 'direction') })),
       ...(pick(data, 'direction') === 'calculate' && ({ to: omit(data, 'direction') }))
     }
-    console.log(parcelDirection)
     if (data === 'send_product') {
       sendProduct(message.chat);
     } else if (data === 'document') {
@@ -31,7 +31,7 @@ function initializeView() {
     } else if (data?.direction === 'calculate'){
       bot.sendMessage(message.chat.id, parcelDirection.from?.name  + ' – '+ parcelDirection.to?.name)
     } else if (data === 'back') {
-      main(chatId, firstName);
+      mainMenu(chatId, firstName);
     }
   });
 

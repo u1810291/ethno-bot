@@ -9,7 +9,7 @@ function sendProduct(chat){
       [{ text: 'Косметика', callback_data: 'from' }],
       [{ text: 'Питание',   callback_data: 'from' }],
       [{ text: 'Другое',    callback_data: 'from' }],
-      [{ text: 'Назад',     callback_data: 'kirish' }]
+      [{ text: 'Назад',     callback_data: 'back' }]
     ]
   };
   bot.sendMessage(chat.id, 'Что хотите отправить?', { reply_markup });

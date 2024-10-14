@@ -19,7 +19,7 @@ const productSchema = new Schema({
         type: String,
         required: true
     },
-    stock: {
+    parcel: {
         type: Number,
         default: 0
     }

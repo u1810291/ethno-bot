@@ -4,7 +4,7 @@ function isJSONParsable(str) {
       return true;
   } catch (e) {
       return false;
-  }
+  } // Exception handler
 }
 
 function omit(obj, str) {
