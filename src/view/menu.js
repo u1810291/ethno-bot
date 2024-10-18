@@ -9,7 +9,7 @@ function mainMenu(chatId, firstName){
     inline_keyboard: [
       [{ text: 'Отправить посылку', callback_data: 'send_product' }],
       [{ text: 'Выкуп товара', callback_data: 'buy_product' }],
-      [{ text: 'Наши адреса', callback_data: 'address' }],
+      [{ text: 'Наши адреса', callback_data: 'location' }],
       [{ text: 'отслеживание посылки', callback_data: 'tracking'}]
     ]
   }

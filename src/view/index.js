@@ -4,7 +4,7 @@ const { bot } = require('../config/bot.config');
 const { commandsMatch } = require('./commands');
 const { sendProduct } = require('./sendProduct');
 const { isJSONParsable, omit, pick } = require('../utils/helpers');
-
+const {location} = require('./locations')
 let parcelDirection;
 function initializeView() {
 
@@ -32,6 +32,8 @@ function initializeView() {
       bot.sendMessage(message.chat.id, parcelDirection.from?.name  + ' – '+ parcelDirection.to?.name)
     } else if (data === 'back') {
       mainMenu(chatId, firstName);
+    }else if (data === 'location') {
+      location(chatId);
     }
   });
 
