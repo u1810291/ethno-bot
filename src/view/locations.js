@@ -10,7 +10,6 @@ function location(chatId){
       [{ text: 'Бишкек',  url: 'https://t.me/ethnologisticsuz/1249'}],
       [{ text: 'Москва',  url: 'https://t.me/ethnologisticsuz/1258'}],
       [{ text: 'Душанбе',  url: 'https://t.me/ethnologisticsuz/1251'}],
-      [{ text: 'Назад',  url: 'menu'}]
     ]
   }
   bot.sendMessage(chatId, "Пожалуйста выберите адрес:", { reply_markup });
