@@ -1,13 +1,7 @@
 const { bot } = require('../config/bot.config');
-const axios = require('axios')
+
 function location(chatId){
-  //const img = './assets/logistics.jpg';
-  const data = axios.get('https://api.ethnologistics.com/api/Tracking?treknumber=533655470').then((res)=>{
-    console.log(res) 
-    return res.data
-    }).catch((err)=>{
-      console.log(err)
-    });
+  const img = './assets/logistics.jpg';
   const caption = "Наши адреса";
   const reply_markup = {
     inline_keyboard: [
@@ -21,7 +15,7 @@ function location(chatId){
         [{ text: 'nazad',  url: ''}]
     ]
   }
-  bot.sendMessage(chatId, JSON.stringify(data), { caption, reply_markup });
+  bot.sendPhoto(chatId, img, { caption, reply_markup });
 }
 
 module.exports = { location }
